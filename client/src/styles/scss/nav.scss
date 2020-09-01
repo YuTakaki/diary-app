@@ -1,0 +1,105 @@
+nav{
+    padding: 0 10px;
+    
+}
+.container{
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding-top: 20px;
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    .logo{
+        font-size: 2rem;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    ul{
+        display: none;
+        position: absolute;
+        padding-top: 40px;
+        top: 0;
+        right: -100px;
+        height: 100vh;
+        flex-direction: column;
+        list-style-type: none;
+        transition: 2s left;
+        z-index: 9;
+    }
+    li{
+        margin-right: 50px;
+        font-family: 'Open Sans', sans-serif;
+        padding: 20px;
+        color: white;
+        cursor: pointer;
+       
+    }
+    
+    input[type=checkbox]{
+        display: none;
+    }
+    i{
+        color: white;
+        font-size: 2rem;
+    }
+    input[type=checkbox]:checked ~ ul{
+        // display: block;
+        // width: 100vw;
+        // height: 600px;
+        background-color: rgb(33, 132, 245);
+        display: inline;
+        left: 0;
+        width: 100%;
+    }
+    label{
+        z-index: 10;
+    }
+}
+@media only screen and (min-width : 850px){
+    .container{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: 50px;
+        padding-top: 20px;
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        .logo{
+            font-size: 2rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+    
+        ul{
+            padding: 0;
+            position: relative;
+            height: max-content;
+            width: max-content;
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+        }
+        li{
+            margin-right: 50px;
+            font-family: 'Open Sans', sans-serif;
+            padding: 20px;
+            color: white;
+            cursor: pointer;
+        }
+        .signinBtn, .logoutBtn{
+            background-color: rgb(253, 94, 94);
+            border-radius: 13px;
+        }
+        label{
+            display: none;
+        }
+        
+        
+    }
+    
+}

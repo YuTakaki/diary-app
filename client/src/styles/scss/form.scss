@@ -1,0 +1,95 @@
+body,html{
+    margin: 0;
+    padding: 0;
+}
+.form{
+    position: absolute;
+    // display: none;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(59, 59, 59, 0.6);
+    z-index: 10;
+}
+// .show{
+//     display: inline;
+// }
+// .showForm{
+//     display: flex;
+// }
+form{
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80%;
+    background-color: white;
+    padding: 40px;
+    width: 80%;
+    box-shadow: 5px 5px 5px rgb(72, 78, 90);
+    h1{
+        font-size: 2rem;
+        font-family: 'Montserrat', sans-serif;
+        color: rgb(64, 139, 224);
+        margin-bottom: 35px;
+    }
+    label, input{
+        font-family: 'Open Sans', sans-serif;
+    }
+    label{
+        position: relative;
+        top: -25px;
+        margin-top: 5px;
+        color: rgb(117, 117, 117);
+        transition: 0.5s;
+    }
+    div{
+        width: 100%;
+    }
+    input[type=text], input[type=password]{
+        width: 100%;
+        font-size: 1rem;
+        padding: 5px;
+        padding-bottom: 0;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid rgb(64, 139, 224);
+        outline: 0;
+    }
+    input[type=submit]{
+        background-color: rgb(253, 94, 94);
+        border-radius: 13px;
+        font-size: 1rem;
+        border: none;
+        outline: none;
+        padding: 10px;
+        width: 50%;
+        color: white;
+    }
+    input:not(:placeholder-shown) + label {
+        top : -45px;
+    }
+    .exit{
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: none;
+        outline: none;
+        font-size: 2rem;
+        background-color: transparent;
+        color: red;
+    }
+
+}
+@media only screen and (min-width : 462px){
+    form{
+        width: 400px;
+    }
+    input[type=submit]{
+        width: 30%;
+    }
+}

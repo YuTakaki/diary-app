@@ -1,0 +1,97 @@
+nav {
+  padding: 0 10px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding-top: 20px;
+}
+.container a {
+  text-decoration: none;
+  color: white;
+}
+.container .logo {
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+}
+.container ul {
+  display: none;
+  position: absolute;
+  padding-top: 40px;
+  top: 0;
+  right: -100px;
+  height: 100vh;
+  flex-direction: column;
+  list-style-type: none;
+  transition: 2s left;
+  z-index: 9;
+}
+.container li {
+  margin-right: 50px;
+  font-family: "Open Sans", sans-serif;
+  padding: 20px;
+  color: white;
+  cursor: pointer;
+}
+.container input[type=checkbox] {
+  display: none;
+}
+.container i {
+  color: white;
+  font-size: 2rem;
+}
+.container input[type=checkbox]:checked ~ ul {
+  background-color: #2184f5;
+  display: inline;
+  left: 0;
+  width: 100%;
+}
+.container label {
+  z-index: 10;
+}
+
+@media only screen and (min-width: 850px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    padding-top: 20px;
+  }
+  .container a {
+    text-decoration: none;
+    color: white;
+  }
+  .container .logo {
+    font-size: 2rem;
+    font-family: "Montserrat", sans-serif;
+  }
+  .container ul {
+    padding: 0;
+    position: relative;
+    height: -webkit-max-content;
+    height: max-content;
+    width: -webkit-max-content;
+    width: max-content;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+  }
+  .container li {
+    margin-right: 50px;
+    font-family: "Open Sans", sans-serif;
+    padding: 20px;
+    color: white;
+    cursor: pointer;
+  }
+  .container .signinBtn, .container .logoutBtn {
+    background-color: #fd5e5e;
+    border-radius: 13px;
+  }
+  .container label {
+    display: none;
+  }
+}
