@@ -1,14 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Login from './login';
 import Signup from './signup';
 import '../../styles/css/home.css';
 import girl from '../../assets/girl.png';
 import {openForm} from '../functions/methods';
+import {Auth} from '../../context/authentication';
+import Dashboard from '../dashboard/dahboard'
 
 const Home = (props) => {
+    const {auth} = useContext(Auth);
     
-    return (  
-        <div className='home'>
+    const dashboard = !auth.is_login ? (
+        
             <div className='main'>
                 <div className='getStarted'>
                     <h1>Create records of your day in one go</h1>
@@ -20,12 +23,18 @@ const Home = (props) => {
                     <img src={girl}/>
                 </div>
             </div>
-            {/* <div className='form'>
-                <Signup />
-                <Login />
-            </div> */}
-            
+        
+    ) : (<Dashboard />)
+    
+    return (  
+        <div className='home'>
+            {dashboard}
+
         </div>
+        
+            
+            
+        
     );
 }
  

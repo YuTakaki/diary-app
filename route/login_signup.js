@@ -1,5 +1,7 @@
 const express = require('express');
 const Diary = require('../model/diary');
+const bcrypt = require('bcrypt');
+const passport = require('passport');
 
 const route = express.Router();
 
@@ -23,14 +25,29 @@ route.post('/sign-up', (req, res)=> {
                     if(err.length > 0){
                         res.send(err);
                     }else{
-                        Diary.create({username, email, password})
-                            .then(() => res.send(true));
-                    }
-                })
-        })
+                        bcrypt.genSalt(10, (err, salt)=>{
+                            if (err) throw err;
+                            bcrypt.hash(password, salt, (err, hash) => {
+                                if(err) throw err;
+                                Diary.create({username, email, password : hash})
+                                    .then(() => res.send(true));
+                            });
+                        });
+                    };
+                });
+        });
 });
 
-route.post('/log-in', (req, res) => {
+route.post('/log-in', (req, res, next) => {
+    passport.authenticate('local', (err, user, info) => {
+        if(err) return next(err);
+        if(!user) return res.send(info);
+        req.logIn(user, (err) => {
+            if(err) return next(err);
+            return res.redirect('/dashboard/' + user._id);
+        });
+    })(req, res, next)
+
 
 });
 

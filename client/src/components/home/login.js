@@ -26,8 +26,13 @@ const Login = (props) => {
             username : loginForm.username,
             password : loginForm.password
         }).then(res =>{
-            dispatch({type : 'LOGIN', user_id : res.data});
-            props.history.push('/');
+            if(!res.data.msg){
+                dispatch({type : 'LOGIN', user_id : res.data});
+                props.history.push('/');
+            }else{
+                console.log(res.data);
+            }
+            
         });
     }
     return (
