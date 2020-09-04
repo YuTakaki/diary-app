@@ -6,12 +6,13 @@ import girl from '../../assets/girl.png';
 import {openForm} from '../functions/methods';
 import {Auth} from '../../context/authentication';
 import Dashboard from '../dashboard/dahboard'
+import Entries from '../dashboard/entries';
 
 const Home = (props) => {
     const {auth} = useContext(Auth);
     
-    const dashboard = !auth.is_login ? (
-        
+    return (  
+        <div className='home'>
             <div className='main'>
                 <div className='getStarted'>
                     <h1>Create records of your day in one go</h1>
@@ -23,12 +24,7 @@ const Home = (props) => {
                     <img src={girl}/>
                 </div>
             </div>
-        
-    ) : (<Dashboard />)
-    
-    return (  
-        <div className='home'>
-            {dashboard}
+            
 
         </div>
         

@@ -17,7 +17,7 @@ body,html{
 // .showForm{
 //     display: flex;
 // }
-form{
+.sign-in_form, .sign-up_form {
     position: absolute;
     display: flex;
     top: 50%;
@@ -29,7 +29,7 @@ form{
     height: 80%;
     background-color: white;
     padding: 40px;
-    width: 80%;
+    width: 40%;
     box-shadow: 5px 5px 5px rgb(72, 78, 90);
     h1{
         font-size: 2rem;
@@ -86,7 +86,7 @@ form{
 
 }
 @media only screen and (min-width : 462px){
-    form{
+    .sign-in_form, .sign-up_form{
         width: 400px;
     }
     input[type=submit]{

@@ -12,7 +12,7 @@ body, html {
   z-index: 10;
 }
 
-form {
+.sign-in_form, .sign-up_form {
   position: absolute;
   display: flex;
   top: 50%;
@@ -24,29 +24,29 @@ form {
   height: 80%;
   background-color: white;
   padding: 40px;
-  width: 80%;
+  width: 40%;
   box-shadow: 5px 5px 5px #484e5a;
 }
-form h1 {
+.sign-in_form h1, .sign-up_form h1 {
   font-size: 2rem;
   font-family: "Montserrat", sans-serif;
   color: #408be0;
   margin-bottom: 35px;
 }
-form label, form input {
+.sign-in_form label, .sign-in_form input, .sign-up_form label, .sign-up_form input {
   font-family: "Open Sans", sans-serif;
 }
-form label {
+.sign-in_form label, .sign-up_form label {
   position: relative;
   top: -25px;
   margin-top: 5px;
   color: #757575;
   transition: 0.5s;
 }
-form div {
+.sign-in_form div, .sign-up_form div {
   width: 100%;
 }
-form input[type=text], form input[type=password] {
+.sign-in_form input[type=text], .sign-in_form input[type=password], .sign-up_form input[type=text], .sign-up_form input[type=password] {
   width: 100%;
   font-size: 1rem;
   padding: 5px;
@@ -56,7 +56,7 @@ form input[type=text], form input[type=password] {
   border-bottom: 1px solid #408be0;
   outline: 0;
 }
-form input[type=submit] {
+.sign-in_form input[type=submit], .sign-up_form input[type=submit] {
   background-color: #fd5e5e;
   border-radius: 13px;
   font-size: 1rem;
@@ -66,10 +66,10 @@ form input[type=submit] {
   width: 50%;
   color: white;
 }
-form input:not(:placeholder-shown) + label {
+.sign-in_form input:not(:placeholder-shown) + label, .sign-up_form input:not(:placeholder-shown) + label {
   top: -45px;
 }
-form .exit {
+.sign-in_form .exit, .sign-up_form .exit {
   position: absolute;
   top: 0;
   right: 0;
@@ -81,7 +81,7 @@ form .exit {
 }
 
 @media only screen and (min-width: 462px) {
-  form {
+  .sign-in_form, .sign-up_form {
     width: 400px;
   }
 

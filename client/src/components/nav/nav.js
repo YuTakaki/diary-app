@@ -11,10 +11,11 @@ const Navbar = () => {
         <nav>
             <div className='container'>
                 <div className='logo'>
-                    <Link to='/'>Diary</Link>
+                    <Link to='/home-page'>Diary</Link>
                 </div>
                 <input type='checkbox' id='check' />
                 {auth.is_login ? (<SignedInLinks />) : (<SignedOutLinks /> )} 
+                {/* <SignedInLinks /> */}
                 <label htmlFor='check'><i className='fa fa-bars'></i></label>  
             </div>
         </nav>

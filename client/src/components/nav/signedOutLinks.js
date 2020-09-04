@@ -10,7 +10,7 @@ const SignedOutLinks = (props) => {
     }
     return ( 
         <ul>
-            <Link to='/' onClick={closeNav}><li>Home</li></Link>
+            <Link to='/home-page' onClick={closeNav}><li>Home</li></Link>
             <Link to='/' onClick={closeNav}><li>About</li></Link>
             <li className='signinBtn' onClick={() => {
                 openForm(props, '/log-in'); 

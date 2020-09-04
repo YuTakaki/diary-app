@@ -1,6 +1,10 @@
 nav{
     padding: 0 10px;
-    
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background-color: rgba(0, 107, 230, 0.5);
+    height: 80px;
 }
 .container{
     display: flex;
@@ -60,6 +64,7 @@ nav{
     }
 }
 @media only screen and (min-width : 850px){
+    
     .container{
         flex-direction: row;
         justify-content: space-around;
@@ -91,9 +96,28 @@ nav{
             color: white;
             cursor: pointer;
         }
-        .signinBtn, .logoutBtn{
+        .signinBtn, .profileBtn{
             background-color: rgb(253, 94, 94);
             border-radius: 13px;
+        }
+        .dropdown{
+            display: none;
+            position: absolute;
+            right: 50px;
+            padding-top: 30px;
+          }
+        .dropdown ul{
+            background-color: white;
+            border-radius: 10px;
+            position: static;
+        }
+        .dropdown li{
+            color: black;
+            font-size: 0.7rem;
+        }
+
+        .profileBtn:hover .dropdown, .dropdown:hover{
+        display: block;
         }
         label{
             display: none;

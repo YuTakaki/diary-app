@@ -2,7 +2,8 @@ import React, {useState, useEffect, useContext} from 'react';
 import '../../styles/css/form.css';
 import {openForm} from '../functions/methods';
 import axios from 'axios';
-import {Auth} from '../../context/authentication'
+import {Auth} from '../../context/authentication';
+import {User_data} from '../../context/userdata';
 
 const Login = (props) => {
     const [loginForm, setLoginForm] = useState({
@@ -19,6 +20,8 @@ const Login = (props) => {
         // console.log(loginForm);
     });
     const {auth, dispatch} = useContext(Auth);
+    const {user, dispatchUser} = useContext(User_data);
+    
 
     const submit = (e) => {
         e.preventDefault();
@@ -28,7 +31,15 @@ const Login = (props) => {
         }).then(res =>{
             if(!res.data.msg){
                 dispatch({type : 'LOGIN', user_id : res.data});
-                props.history.push('/');
+                
+                
+                axios.get(`/dashboard/user/${res.data}`)
+                    .then(user => {
+                        dispatchUser({type : 'GETDATA' , user : user.data});
+                        props.history.push('/');
+                    })
+                
+                // console.log(res.data)
             }else{
                 console.log(res.data);
             }

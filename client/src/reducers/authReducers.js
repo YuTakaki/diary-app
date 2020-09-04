@@ -5,6 +5,11 @@ export const authReducers = (state, action) => {
                 is_login : true,
                 user_id : action.user_id
             }
+        case 'LOGOUT':
+            return{
+                is_login : false,
+                user_id : ''
+            }
         default:
             return state
     }

@@ -1,5 +1,10 @@
 nav {
   padding: 0 10px;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: rgba(0, 107, 230, 0.5);
+  height: 80px;
 }
 
 .container {
@@ -87,9 +92,27 @@ nav {
     color: white;
     cursor: pointer;
   }
-  .container .signinBtn, .container .logoutBtn {
+  .container .signinBtn, .container .profileBtn {
     background-color: #fd5e5e;
     border-radius: 13px;
+  }
+  .container .dropdown {
+    display: none;
+    position: absolute;
+    right: 50px;
+    padding-top: 30px;
+  }
+  .container .dropdown ul {
+    background-color: white;
+    border-radius: 10px;
+    position: static;
+  }
+  .container .dropdown li {
+    color: black;
+    font-size: 0.7rem;
+  }
+  .container .profileBtn:hover .dropdown, .container .dropdown:hover {
+    display: block;
   }
   .container label {
     display: none;
