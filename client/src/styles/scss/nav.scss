@@ -5,6 +5,7 @@ nav{
     width: 100vw;
     background-color: rgba(0, 107, 230, 0.5);
     height: 80px;
+    z-index: 9;
 }
 .container{
     display: flex;
@@ -40,7 +41,7 @@ nav{
         padding: 20px;
         color: white;
         cursor: pointer;
-       
+        z-index: 7;
     }
     
     input[type=checkbox]{
@@ -99,12 +100,15 @@ nav{
         .signinBtn, .profileBtn{
             background-color: rgb(253, 94, 94);
             border-radius: 13px;
+            
         }
         .dropdown{
             display: none;
             position: absolute;
             right: 50px;
             padding-top: 30px;
+            
+            
           }
         .dropdown ul{
             background-color: white;

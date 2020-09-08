@@ -42,6 +42,7 @@ body, html {
   margin-top: 5px;
   color: #757575;
   transition: 0.5s;
+  z-index: -1;
 }
 .sign-in_form div, .sign-up_form div {
   width: 100%;
@@ -55,6 +56,7 @@ body, html {
   border: none;
   border-bottom: 1px solid #408be0;
   outline: 0;
+  z-index: 6;
 }
 .sign-in_form input[type=submit], .sign-up_form input[type=submit] {
   background-color: #fd5e5e;
@@ -66,7 +68,7 @@ body, html {
   width: 50%;
   color: white;
 }
-.sign-in_form input:not(:placeholder-shown) + label, .sign-up_form input:not(:placeholder-shown) + label {
+.sign-in_form input:focus + label, .sign-in_form input:not(:placeholder-shown) + label, .sign-up_form input:focus + label, .sign-up_form input:not(:placeholder-shown) + label {
   top: -45px;
 }
 .sign-in_form .exit, .sign-up_form .exit {

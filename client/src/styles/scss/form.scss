@@ -46,6 +46,7 @@ body,html{
         margin-top: 5px;
         color: rgb(117, 117, 117);
         transition: 0.5s;
+        z-index: -1;
     }
     div{
         width: 100%;
@@ -59,6 +60,7 @@ body,html{
         border: none;
         border-bottom: 1px solid rgb(64, 139, 224);
         outline: 0;
+        z-index: 6;
     }
     input[type=submit]{
         background-color: rgb(253, 94, 94);
@@ -70,7 +72,7 @@ body,html{
         width: 50%;
         color: white;
     }
-    input:not(:placeholder-shown) + label {
+    input:focus + label, input:not(:placeholder-shown) + label {
         top : -45px;
     }
     .exit{

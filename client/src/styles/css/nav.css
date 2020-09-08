@@ -5,6 +5,7 @@ nav {
   width: 100vw;
   background-color: rgba(0, 107, 230, 0.5);
   height: 80px;
+  z-index: 9;
 }
 
 .container {
@@ -40,6 +41,7 @@ nav {
   padding: 20px;
   color: white;
   cursor: pointer;
+  z-index: 7;
 }
 .container input[type=checkbox] {
   display: none;

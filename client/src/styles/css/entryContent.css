@@ -1,0 +1,48 @@
+.entryContentContainer {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.entryContentContainer .entryContent {
+  width: 50%;
+}
+.entryContentContainer .entryContentHeader {
+  display: flex;
+  justify-content: space-between;
+}
+.entryContentContainer h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  color: white;
+  max-width: 70%;
+  overflow: hidden;
+}
+.entryContentContainer .entryContentDate {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8rem;
+  color: white;
+}
+.entryContentContainer button {
+  background-color: #fd5e5e;
+  border-radius: 13px;
+  color: white;
+  width: 60px;
+  margin-left: 10px;
+  height: 100%;
+  border: none;
+}
+.entryContentContainer .content {
+  font-family: "Open Sans", sans-serif;
+  color: #006be6;
+  text-indent: 30px;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+.entryContentContainer .diaryContentContainer {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  margin-top: 10px;
+  border-radius: 13px;
+}

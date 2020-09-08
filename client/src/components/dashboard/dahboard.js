@@ -9,8 +9,6 @@ import {User_data} from '../../context/userdata';
 const Dashboard = (props) => {
     const {auth} = useContext(Auth);
     const {user} = useContext(User_data);
-
-    
     return (
 
         <div className='dashboard'>
@@ -19,7 +17,7 @@ const Dashboard = (props) => {
                 <div className='entries'>
                     {user.diaries.length > 0 ? 
                         
-                    user.diaries.map(diary => (< Entries diary={diary}/>)) : (
+                    user.diaries.map(diary => (< Entries diary={diary} key={diary._id}/>)) : (
                         <div className='noEntries'>
 
                         </div>

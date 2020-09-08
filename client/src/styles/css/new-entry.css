@@ -1,0 +1,47 @@
+.entryFormContainer {
+  display: flex;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+}
+.entryFormContainer form {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30vw;
+}
+.entryFormContainer label {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  font-size: 2rem;
+}
+.entryFormContainer #title, .entryFormContainer #content {
+  outline: none;
+  font-family: "Open Sans", sans-serif;
+  padding: 10px;
+}
+.entryFormContainer #title:focus, .entryFormContainer #content:focus {
+  border: 1px solid blue;
+}
+.entryFormContainer #title {
+  height: 5vh;
+  width: 100%;
+}
+.entryFormContainer #content {
+  height: 55vh;
+  resize: none;
+  width: 100%;
+}
+.entryFormContainer input[type=submit] {
+  margin-top: 10px;
+  background-color: #fd5e5e;
+  border-radius: 13px;
+  outline: none;
+  border: none;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  height: 40px;
+  width: 60%;
+}

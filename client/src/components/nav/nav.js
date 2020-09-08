@@ -6,16 +6,15 @@ import SignedInLinks from './signedInLinks';
 import {Auth} from '../../context/authentication'
 const Navbar = () => {
     const {auth} = useContext(Auth);
-    console.log(auth)
+    console.log(auth);
     return ( 
         <nav>
             <div className='container'>
                 <div className='logo'>
-                    <Link to='/home-page'>Diary</Link>
+                    <Link to='/'>Diary</Link>
                 </div>
                 <input type='checkbox' id='check' />
                 {auth.is_login ? (<SignedInLinks />) : (<SignedOutLinks /> )} 
-                {/* <SignedInLinks /> */}
                 <label htmlFor='check'><i className='fa fa-bars'></i></label>  
             </div>
         </nav>
