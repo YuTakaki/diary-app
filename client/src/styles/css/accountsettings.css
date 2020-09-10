@@ -1,0 +1,49 @@
+.account-settings-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.account-settings-form h1 {
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  margin-bottom: 35px;
+  text-align: center;
+}
+.account-settings-form label, .account-settings-form input {
+  font-family: "Open Sans", sans-serif;
+}
+.account-settings-form label {
+  position: relative;
+  top: -25px;
+  margin-top: 5px;
+  color: #cfcfcf;
+  transition: 0.5s;
+  z-index: -1;
+}
+.account-settings-form input[type=text], .account-settings-form input[type=password] {
+  width: 100%;
+  font-size: 1rem;
+  color: white;
+  padding: 5px;
+  padding-bottom: 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #408be0;
+  outline: 0;
+  z-index: 6;
+}
+.account-settings-form input[type=submit] {
+  background-color: #fd5e5e;
+  border-radius: 13px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 50%;
+  color: white;
+}
+.account-settings-form input:focus + label, .account-settings-form input:not(:placeholder-shown) + label {
+  top: -45px;
+}

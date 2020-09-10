@@ -1,4 +1,4 @@
-import React, {Suspense, lazy} from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './components/home/home';
 import Navbar from './components/nav/nav';
@@ -10,6 +10,7 @@ import UserDataProvider from './context/userdata';
 import NewEntry from './components/dashboard/newEntry';
 import EntryContent from './components/dashboard/entry-content';
 import UpdateDiary from './components/dashboard/updateForm';
+import AccountSettings from './components/dashboard/accountsetting';
 
 
 function App() {
@@ -26,7 +27,9 @@ function App() {
                 <Route path = '/log-in' component={Login} />
                 <Route path ='/new-entry' component={NewEntry} />
                 <Route path ='/update-diary/:id' component={UpdateDiary} />
-                <Route path = '/:id' component={EntryContent} />
+                <Route path = '/account-setting' component={AccountSettings} />
+                <Route path = '/diary/:id' component={EntryContent} />
+                
               </Switch>
           </UserDataProvider>
         </AuthProvider>

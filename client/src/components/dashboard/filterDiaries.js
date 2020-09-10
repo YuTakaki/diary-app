@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 const FilterDiaries = ({filterDiary}) => {
     const date = new Date(filterDiary.date);
     return (  
-        <Link to={`/${filterDiary._id}`}>
+        <Link to={`diary/${filterDiary._id}`}>
             <div className='filterDiaries'>
                 <h3>{filterDiary.title}</h3>
                 <p className='date_filter'>{month[date.getMonth()]} {date.getDate()},{date.getFullYear()}</p>

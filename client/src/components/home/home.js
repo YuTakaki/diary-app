@@ -1,15 +1,10 @@
-import React, {useContext} from 'react';
-import Login from './login';
-import Signup from './signup';
+import React from 'react';
 import '../../styles/css/home.css';
 import girl from '../../assets/girl.png';
 import {openForm} from '../functions/methods';
-import {Auth} from '../../context/authentication';
-import Dashboard from '../dashboard/dahboard'
-import Entries from '../dashboard/entries';
+
 
 const Home = (props) => {
-    const {auth} = useContext(Auth);
     
     return (  
         <div className='home'>
@@ -21,7 +16,7 @@ const Home = (props) => {
 
                 </div>
                 <div className='image'>
-                    <img src={girl}/>
+                    <img src={girl} alt='background'/>
                 </div>
             </div>
             

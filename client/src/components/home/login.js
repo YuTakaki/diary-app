@@ -19,8 +19,8 @@ const Login = (props) => {
     useEffect(()=>{
         // console.log(loginForm);
     });
-    const {auth, dispatch} = useContext(Auth);
-    const {user, dispatchUser} = useContext(User_data);
+    const {dispatch} = useContext(Auth);
+    const {dispatchUser} = useContext(User_data);
     
 
     const submit = (e) => {
@@ -55,7 +55,7 @@ const Login = (props) => {
                     <label htmlFor='username'>Username</label>
                 </div>
                 <div>
-                    <input value={loginForm.password} value={loginForm.password} type='password' onChange={(e) => setState('password', e.target.value)}  placeholder=' '/>
+                    <input value={loginForm.password} type='password' onChange={(e) => setState('password', e.target.value)}  placeholder=' '/>
                     <label htmlFor='password'>Password</label>
                 </div>        
                 <input type='submit' />

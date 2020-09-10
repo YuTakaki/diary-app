@@ -12,7 +12,7 @@ const Entries = ({diary}) => {
     const hours = date.getHours() > 10 ? date.getHours() : `0${date.getHours()}`;
     const minutes = date.getMinutes() > 10 ? date.getMinutes() : `0${date.getMinutes()}`;
     return ( 
-        <Link to={`/${diary._id}`}>
+        <Link to={`/diary/${diary._id}`}>
             <div className='entry' key={diary._id}>
                 <div className='titleContent'>
                     

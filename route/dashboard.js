@@ -2,6 +2,7 @@ const express = require('express');
 const route = express.Router();
 const ensureAuthenticated = require('../setup/ensureAuthenticated');
 const Diary = require('../model/diary');
+const bcrypt = require('bcrypt');
 
 route.use(express.json());
 route.use(express.urlencoded({extended : true}));
@@ -44,6 +45,40 @@ route.post('/update-entry/', (req, res) => {
                 .then(user => res.redirect(`/dashboard/user/${user_id}`))
         })
         .catch(err => console.log(err));
+});
+
+route.put('/update-account/:id', (req, res) => {
+    const {_id, username, email, password, retry_password} = req.body;
+    let err = [];
+    Diary.findOne({username : username})
+        .then((user) => {
+            const checkUsername = /^[^\d][\w]{6,}/;
+            if(!checkUsername.test(username)) err.push({msg : "not a valid username"});
+            if(user && user._id.toString() !== _id) err.push({msg : 'Username already exist'});
+            Diary.findOne({email : email})
+                .then((user) => {
+                    const check = /([\w.-\_]+)[@][\w]{2,}([.]?[\w]{2,})?([.][\w]{2,})?/;
+                    if(!check.test(email)) err.push({msg : "not a valid email"});
+                    if(user && user._id.toString() !== _id) err.push({msg : 'Email already exist'});
+                    if(password !== retry_password) err.push({msg : 'password is wrong'});
+                    if(err.length > 0){
+                        res.send(err);
+                    }else{
+                        bcrypt.genSalt(10, (err, salt)=>{
+                            if (err) throw err;
+                            bcrypt.hash(password, salt, (err, hash) => {
+                                if(err) throw err;
+                                Diary.findOneAndUpdate({_id : user._id},{username, email, password : hash})
+                                    .then(() => Diary.findOne({username : username})
+                                                    .then(user => {
+                                                        user.diaries = user.diaries.reverse()
+                                                        res.send(user);
+                                                    }));
+                            });
+                        });
+                    };
+                });
+        });
 });
 route.get('/postcontent/user/', (req, res) => {
     const {user_id, diary_id} = req.query;

@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export const userDataReducer = (state, action) => {
     switch(action.type){
         case 'GETDATA' : 

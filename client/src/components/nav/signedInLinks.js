@@ -4,13 +4,14 @@ import axios from 'axios';
 import {Auth} from '../../context/authentication'
 
 const SignedInLinks = (props) => {
-    const {auth, dispatch} = useContext(Auth);
+    const {dispatch} = useContext(Auth);
     const logOut = () => {
-        axios.get('user/log-out')
+        axios.get('/user/log-out')
             .then(res => {
                 if(res.data === 'logout'){
                     dispatch({type : 'LOGOUT'});
                     // props.history.push('/home-page');
+                    localStorage.clear();
                 }
             });
     }
