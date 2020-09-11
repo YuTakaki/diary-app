@@ -6,6 +6,7 @@
     .filter-form-container{
         display: flex;
         width: 100%;
+        justify-content: center;
     }
     input, select{
         margin: 0 10px;
@@ -14,15 +15,7 @@
         outline: 0;
         font-family: 'Open Sans', sans-serif;
     }
-    input[type=submit]{
-        margin-top: 10px;
-        background-color: rgb(253, 94, 94);
-        border-radius: 13px;
-        border: none;
-        color: white;
-        height: 40px;
-        width: 50%;
-    }
+
 }
 .filterDiaryContainer{
     overflow-y: auto;
@@ -54,4 +47,13 @@
     .date_filter{
         font-size: 12px;
     }
+}
+@media only screen and (min-width : 600px) and (max-width : 910px){
+    .filter-form-container{
+        select{
+            width: 100px;
+        }
+    }
+    
+
 }

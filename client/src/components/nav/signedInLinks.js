@@ -1,7 +1,8 @@
 import React, {useContext} from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import axios from 'axios';
-import {Auth} from '../../context/authentication'
+import {Auth} from '../../context/authentication';
+import {toggleNavBar} from '../functions/methods';
 
 const SignedInLinks = (props) => {
     const {dispatch} = useContext(Auth);
@@ -16,12 +17,13 @@ const SignedInLinks = (props) => {
             });
     }
     return ( 
-        <ul>
-            <Link to='/new-entry'><li>New Entry</li></Link>
+        <ul className='nav'>
+            <Link to='/new-entry' onClick={toggleNavBar}><li>New Entry</li></Link>
             <li className='profileBtn'>Yu
                 <div className='dropdown'>
                     <ul>
                         <li onClick={logOut}>Log out</li>
+                        <Link to='/account-setting'><li>Account Settings</li></Link>
                     </ul>
                 </div>
             </li>

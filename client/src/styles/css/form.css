@@ -21,10 +21,10 @@ body, html {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 80%;
+  height: 60%;
   background-color: white;
   padding: 40px;
-  width: 40%;
+  width: 90%;
   box-shadow: 5px 5px 5px #484e5a;
 }
 .sign-in_form h1, .sign-up_form h1 {
@@ -67,6 +67,10 @@ body, html {
   padding: 10px;
   width: 50%;
   color: white;
+  transition: 0.5s;
+}
+.sign-in_form input[type=submit]:hover, .sign-up_form input[type=submit]:hover {
+  transform: scale(1.2);
 }
 .sign-in_form input:focus + label, .sign-in_form input:not(:placeholder-shown) + label, .sign-up_form input:focus + label, .sign-up_form input:not(:placeholder-shown) + label {
   top: -45px;
@@ -82,7 +86,7 @@ body, html {
   color: red;
 }
 
-@media only screen and (min-width: 462px) {
+@media only screen and (min-width: 600px) {
   .sign-in_form, .sign-up_form {
     width: 400px;
   }

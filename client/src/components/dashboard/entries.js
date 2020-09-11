@@ -8,9 +8,9 @@ const Entries = ({diary}) => {
     console.log(diary);
     const date = new Date(diary.date);
     const day = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-    const getDate = date.getDate() > 10 ? date.getDate() : `0${date.getDate()}`;
-    const hours = date.getHours() > 10 ? date.getHours() : `0${date.getHours()}`;
-    const minutes = date.getMinutes() > 10 ? date.getMinutes() : `0${date.getMinutes()}`;
+    const getDate = date.getDate() >= 10 ? date.getDate() : `0${date.getDate()}`;
+    const hours = date.getHours() >= 10 ? date.getHours() : `0${date.getHours()}`;
+    const minutes = date.getMinutes() >= 10 ? date.getMinutes() : `0${date.getMinutes()}`;
     return ( 
         <Link to={`/diary/${diary._id}`}>
             <div className='entry' key={diary._id}>

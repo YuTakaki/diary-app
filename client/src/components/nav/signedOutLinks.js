@@ -1,20 +1,19 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {openForm} from '../functions/methods';
-import {withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom';
+import {toggleNavBar} from '../functions/methods';
 
 
 const SignedOutLinks = (props) => {
-    const closeNav = () => {
-        document.querySelector('#check').checked = false;
-    }
     return ( 
-        <ul>
-            <Link to='/home-page' onClick={closeNav}><li>Home</li></Link>
-            <Link to='/' onClick={closeNav}><li>About</li></Link>
+        <ul className='nav'>
+            <Link to='/home-page' onClick={toggleNavBar}><li>Home</li></Link>
             <li className='signinBtn' onClick={() => {
-                openForm(props, '/log-in'); 
-                closeNav();
+                toggleNavBar();
+                setTimeout(()=> {
+                    openForm(props, '/log-in'); 
+                }, 500)
                 }}>Sign-In</li>
         </ul>
      );

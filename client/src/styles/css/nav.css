@@ -2,7 +2,7 @@ nav {
   padding: 0 10px;
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
   background-color: rgba(0, 107, 230, 0.5);
   height: 80px;
   z-index: 9;
@@ -24,40 +24,65 @@ nav {
   font-family: "Montserrat", sans-serif;
 }
 .container ul {
-  display: none;
+  background-color: #006be6;
   position: absolute;
   padding-top: 40px;
-  top: 0;
-  right: -100px;
+  top: 80px;
+  width: 100%;
+  left: -1000px;
   height: 100vh;
-  flex-direction: column;
   list-style-type: none;
-  transition: 2s left;
+  transition: 1s left;
   z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .active {
+  left: 0;
 }
 .container li {
-  margin-right: 50px;
   font-family: "Open Sans", sans-serif;
+  margin: 20px;
   padding: 20px;
   color: white;
   cursor: pointer;
   z-index: 7;
 }
-.container input[type=checkbox] {
-  display: none;
-}
 .container i {
   color: white;
   font-size: 2rem;
 }
-.container input[type=checkbox]:checked ~ ul {
-  background-color: #2184f5;
-  display: inline;
-  left: 0;
-  width: 100%;
-}
-.container label {
+.container .nav_btn {
   z-index: 10;
+  display: block;
+}
+.container .signinBtn, .container .profileBtn {
+  background-color: #fd5e5e;
+  border-radius: 13px;
+  width: 50%;
+  text-align: center;
+}
+.container .dropdown {
+  display: none;
+}
+.container .dropdown ul {
+  background-color: white;
+  border-radius: 10px;
+  position: static;
+  height: 30%;
+}
+.container .dropdown li {
+  color: black;
+  font-size: 0.7rem;
+}
+.container .profileBtn:hover .dropdown, .container .dropdown:hover {
+  display: block;
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  padding-top: 30px;
+  width: 50%;
 }
 
 @media only screen and (min-width: 850px) {
@@ -76,9 +101,12 @@ nav {
     font-size: 2rem;
     font-family: "Montserrat", sans-serif;
   }
+  .container .nav_btn {
+    display: none;
+  }
   .container ul {
-    padding: 0;
-    position: relative;
+    padding-top: 0;
+    position: static;
     height: -webkit-max-content;
     height: max-content;
     width: -webkit-max-content;
@@ -86,6 +114,7 @@ nav {
     display: flex;
     flex-direction: row;
     list-style-type: none;
+    background-color: transparent;
   }
   .container li {
     margin-right: 50px;
@@ -93,28 +122,40 @@ nav {
     padding: 20px;
     color: white;
     cursor: pointer;
+    transition: 0.5s;
+    border-radius: 13px;
+  }
+  .container li:hover {
+    background-color: white;
+    color: #006be6;
   }
   .container .signinBtn, .container .profileBtn {
     background-color: #fd5e5e;
     border-radius: 13px;
+    transition: 0.5s;
+  }
+  .container .signinBtn:hover, .container .profileBtn:hover {
+    transform: scale(1.1);
   }
   .container .dropdown {
     display: none;
-    position: absolute;
-    right: 50px;
-    padding-top: 30px;
   }
   .container .dropdown ul {
     background-color: white;
     border-radius: 10px;
     position: static;
+    display: block;
   }
   .container .dropdown li {
     color: black;
     font-size: 0.7rem;
+    margin-top: 10px;
   }
   .container .profileBtn:hover .dropdown, .container .dropdown:hover {
     display: block;
+    position: absolute;
+    right: 74px;
+    padding-top: 10px;
   }
   .container label {
     display: none;

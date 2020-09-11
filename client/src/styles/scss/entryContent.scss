@@ -9,13 +9,15 @@
     }
     .entryContentHeader{
         display: flex;
+        flex-direction: column-reverse;
         justify-content: space-between;
     }
     h1{
         font-family: 'Montserrat', sans-serif;
-        font-size: 3rem;
+        font-size: 2rem;
         color: white;
-        max-width: 70%;
+        max-width: 100%;
+        height: 100%;
         overflow: hidden;
     }
     .entryContentDate{
@@ -29,8 +31,11 @@
         color: white;
         width: 60px;
         margin-left: 10px;
-        height: 100%;
+        margin-top: 10px;
+        height: 30px;
         border: none;
+        cursor: pointer;
+        transition: 0.5s;
     }
     .content{
         font-family: 'Open Sans', sans-serif;
@@ -44,5 +49,17 @@
         padding: 30px;
         margin-top: 10px;
         border-radius: 13px;
+    }
+    button:hover{
+        transform: scale(1.1);
+
+    }
+}
+@media only screen and (min-width : 720px){
+    .entryContentHeader{
+        flex-direction: row !important;
+    }
+    button{
+        height: 60px !important;
     }
 }

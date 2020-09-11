@@ -3,19 +3,25 @@ import {Link} from 'react-router-dom';
 import SignedOutLinks from './signedOutLinks';
 import '../../styles/css/nav.css'
 import SignedInLinks from './signedInLinks';
-import {Auth} from '../../context/authentication'
+import {Auth} from '../../context/authentication';
+import {toggleNavBar} from '../functions/methods';
+
 const Navbar = () => {
     const {auth} = useContext(Auth);
     console.log(auth);
+    const toggleNav = () => {
+        toggleNavBar();
+    }
     return ( 
         <nav>
             <div className='container'>
                 <div className='logo'>
-                    <Link to='/'>Diary</Link>
+                    <Link to='/' onClick={() => document.querySelector('nav .nav').classList.remove('active')}>Diary</Link>
                 </div>
-                <input type='checkbox' id='check' />
                 {auth.is_login ? (<SignedInLinks />) : (<SignedOutLinks /> )} 
-                <label htmlFor='check'><i className='fa fa-bars'></i></label>  
+                <div className='nav_btn'>
+                    <i className='fa fa-bars' onClick={toggleNav}></i>
+                </div>  
             </div>
         </nav>
      );

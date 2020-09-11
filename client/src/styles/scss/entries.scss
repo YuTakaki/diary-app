@@ -22,13 +22,14 @@ a{
     h1, h2{
         font-family: 'Montserrat', sans-serif;
         color: rgb(64, 139, 224);
-        max-width: 50%;
+        max-width: 30%;
         mask-image: linear-gradient(to right, black 90%, transparent 100%);
     }
     .titleContent{
         display: flex;
         font-family: 'Montserrat', sans-serif;
         color: rgb(64, 139, 224);
+        max-height: max-content;
     }
     .time{
         margin-top: 10px;

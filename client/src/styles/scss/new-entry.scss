@@ -43,5 +43,9 @@
         font-family: 'Open Sans', sans-serif;
         height: 40px;
         width: 60%;
+        transition: 0.5s;
+    }
+    input[type=submit]:hover{
+        transform: scale(1.1);
     }
 }

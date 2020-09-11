@@ -39,6 +39,7 @@ const Filter = () => {
     
     const filterDiaries = filterDiary.length === 0 ? (
                             <div>
+                                <h2>Filtered Search Here</h2>
 
                             </div>
                         ) : (

@@ -7,6 +7,7 @@
 .formFilter .filter-form-container {
   display: flex;
   width: 100%;
+  justify-content: center;
 }
 .formFilter input, .formFilter select {
   margin: 0 10px;
@@ -14,15 +15,6 @@
   width: 25%;
   outline: 0;
   font-family: "Open Sans", sans-serif;
-}
-.formFilter input[type=submit] {
-  margin-top: 10px;
-  background-color: #fd5e5e;
-  border-radius: 13px;
-  border: none;
-  color: white;
-  height: 40px;
-  width: 50%;
 }
 
 .filterDiaryContainer {
@@ -55,4 +47,10 @@
 }
 .filterDiaries .date_filter {
   font-size: 12px;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 910px) {
+  .filter-form-container select {
+    width: 100px;
+  }
 }

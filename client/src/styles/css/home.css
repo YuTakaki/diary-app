@@ -6,13 +6,13 @@ body {
 .main {
   padding: 20px;
   margin: auto;
-  margin-top: 20px;
-  width: 300px;
+  margin-top: 100px;
+  width: 100%;
 }
 .main .getStarted {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 .main img {
   height: 100%;
@@ -39,7 +39,7 @@ body {
   border-radius: 13px;
 }
 
-@media only screen and (min-width: 360px) {
+@media only screen and (min-width: 620px) {
   .main {
     width: -webkit-max-content;
     width: max-content;
@@ -76,6 +76,11 @@ body {
     border: none;
     outline: none;
     border-radius: 13px;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  .main button:hover {
+    transform: scale(1.2);
   }
   .main img {
     height: -webkit-max-content;

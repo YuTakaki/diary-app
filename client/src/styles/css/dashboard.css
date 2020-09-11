@@ -1,20 +1,80 @@
+.entry-title {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+
 .dashboard {
   display: flex;
-  width: 80vw;
-  justify-content: space-between;
-  float: right;
+  width: 80%;
+  justify-content: center;
   margin-top: 100px;
+  overflow-x: hidden;
 }
 .dashboard .entries {
-  width: 55%;
+  width: 100%;
 }
 .dashboard .filter {
   position: fixed;
-  right: 0;
-  padding: 30px;
-  width: 35%;
+  top: 80px;
+  right: -1000px;
+  padding: 10px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 80vh;
+  height: 100%;
+  background-color: rgba(0, 107, 230, 0.5);
+  transition: 1s;
+}
+.dashboard .filter h1, .dashboard .filter h2 {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  text-align: center;
+}
+.dashboard .active {
+  right: 0;
+}
+.dashboard .filterBtn {
+  position: fixed;
+  bottom: 5%;
+  right: 20px;
+  height: -webkit-max-content;
+  height: max-content;
+}
+.dashboard .filterBtn button {
+  background-color: #006be6;
+  color: white;
+  border: 1px solid #818181;
+  width: 50px;
+  height: 50px;
+  border-radius: 13px;
+  outline: 0;
+}
+
+@media only screen and (min-width: 850px) {
+  .dashboard {
+    justify-content: flex-start;
+    margin-top: 100px;
+  }
+  .dashboard .entries {
+    width: 55%;
+    margin-left: 8%;
+  }
+  .dashboard .filter {
+    position: fixed;
+    right: 0;
+    padding: 30px;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    background-color: transparent;
+  }
+  .dashboard .filter h2 {
+    color: #006be6;
+  }
+  .dashboard .filterBtn {
+    display: none;
+  }
 }

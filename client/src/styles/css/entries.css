@@ -24,7 +24,7 @@ a {
 .entry h1, .entry h2 {
   font-family: "Montserrat", sans-serif;
   color: #408be0;
-  max-width: 50%;
+  max-width: 30%;
   -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
           mask-image: linear-gradient(to right, black 90%, transparent 100%);
 }
@@ -32,6 +32,8 @@ a {
   display: flex;
   font-family: "Montserrat", sans-serif;
   color: #408be0;
+  max-height: -webkit-max-content;
+  max-height: max-content;
 }
 .entry .time {
   margin-top: 10px;
