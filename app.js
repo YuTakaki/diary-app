@@ -8,7 +8,7 @@ mongoose.Promise = global.Promise;
 
 const app = express();
 
-mongoose.connect(process.env.MONGODB_URI || process.env.MONGODB,{ useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect( process.env.MONGODB,{ useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('connected to database'))
     .catch(error => console.log(error));
 require('./setup/passport')(passport);
