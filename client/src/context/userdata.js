@@ -5,9 +5,8 @@ import axios from 'axios';
 export const User_data = createContext();
 
 const UserDataProvider = (props) => {
-    const [user, dispatchUser] = useReducer(userDataReducer, {diaries: []});
+    const [user, dispatchUser] = useReducer(userDataReducer, {username : '',diaries: []});
     useEffect(() => {
-        console.log('hi')
         const localStorageAuth = localStorage.getItem('auth');
         if(localStorageAuth){
             const user_id = JSON.parse(localStorageAuth).user_id;

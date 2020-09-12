@@ -50,6 +50,32 @@
   border-radius: 13px;
   outline: 0;
 }
+.dashboard .noEntries {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100% !important;
+  height: 200px;
+}
+.dashboard .noEntries h2 {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  text-align: center;
+}
+.dashboard .noEntries button {
+  background-color: #fd5e5e;
+  border-radius: 13px;
+  color: white;
+  border: none;
+  outline: 0;
+  width: 100%;
+  height: 50px;
+  transition: 0.5s;
+}
+.dashboard .noEntries a {
+  width: 100%;
+}
 
 @media only screen and (min-width: 850px) {
   .dashboard {

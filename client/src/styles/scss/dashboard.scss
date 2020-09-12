@@ -47,6 +47,33 @@
         border-radius: 13px;
         outline: 0;
     }
+    .noEntries{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100% !important;
+        height: 200px;
+
+        h2{
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            text-align: center;
+        }
+        button{
+            background-color: rgb(253, 94, 94);
+            border-radius: 13px;
+            color: white;
+            border: none;
+            outline: 0;
+            width: 100%;
+            height: 50px;
+            transition: .5s
+        }
+        a{
+            width: 100%;
+        }
+    }
 }
 @media only screen and (min-width: 850px){
     .dashboard{

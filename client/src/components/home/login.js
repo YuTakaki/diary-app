@@ -10,6 +10,7 @@ const Login = (props) => {
         username : '',
         password : ''
     });
+    const [signinFormError, setsigninFormError] = useState({});
     const setState = (key, value) => {
         setLoginForm({
             ...loginForm,
@@ -29,7 +30,7 @@ const Login = (props) => {
             username : loginForm.username,
             password : loginForm.password
         }).then(res =>{
-            if(!res.data.msg){
+            if(typeof res.data === 'string'){
                 dispatch({type : 'LOGIN', user_id : res.data});
                 
                 
@@ -39,9 +40,10 @@ const Login = (props) => {
                         props.history.push('/');
                     })
                 
-                // console.log(res.data)
+                
             }else{
-                console.log(res.data);
+                setsigninFormError(res.data);
+                // console.log(res.data)
             }
             
         });
@@ -53,10 +55,12 @@ const Login = (props) => {
                 <div>
                     <input id='username' value={loginForm.username} type='text' onChange={(e) => setState('username', e.target.value)}  placeholder=' '/>
                     <label htmlFor='username'>Username</label>
+                    <p className='error'>{signinFormError.msg_username}</p>
                 </div>
                 <div>
                     <input value={loginForm.password} type='password' onChange={(e) => setState('password', e.target.value)}  placeholder=' '/>
                     <label htmlFor='password'>Password</label>
+                    <p className='error'>{signinFormError.msg_password}</p>
                 </div>        
                 <input type='submit' />
                 <span className='exit' onClick={() => openForm(props,'/')}><i className='fa fa-remove'></i></span>

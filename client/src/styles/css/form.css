@@ -21,11 +21,16 @@ body, html {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 60%;
+  height: 90%;
   background-color: white;
   padding: 40px;
   width: 90%;
   box-shadow: 5px 5px 5px #484e5a;
+}
+.sign-in_form .error, .sign-up_form .error {
+  margin-top: -20px;
+  font-size: 0.8em;
+  color: red;
 }
 .sign-in_form h1, .sign-up_form h1 {
   font-size: 2rem;

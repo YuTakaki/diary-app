@@ -8,10 +8,10 @@ module.exports = function(passport){
             username : username
         }, {email : username}]}, (err, user) => {
             if (err) throw err;
-            if(!user) return done(null, false, {msg : 'username or email doesn\'t exist'});
+            if(!user) return done(null, false, {msg_username : 'username or email doesn\'t exist'});
             bcrypt.compare(password, user.password, (err, isMatch) => {
                 if(isMatch) return done(null, user);
-                return done(null, false, {msg : 'incorrect password'})
+                return done(null, false, {msg_password : 'incorrect password'})
             });
         });
     }));

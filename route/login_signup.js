@@ -10,19 +10,25 @@ route.use(express.urlencoded({extended : false}));
 
 route.post('/sign-up', (req, res)=> {
     const {username, email, password, retry_password} = req.body;
-    let err = [];
+    let err = {
+        msg_username : '',
+        msg_email : '',
+        msg_password : '',
+        msg_retry : ''
+    };
     Diary.findOne({username : username})
         .then((user) => {
             const checkUsername = /^[^\d][\w]{6,}/;
-            if(!checkUsername.test(username)) err.push({msg : "not a valid username"});
-            if(user) err.push({msg : 'Username already exist'});
+            if(!checkUsername.test(username)) err.msg_username = "not a valid username (should have atleast 6 characters and doesn't starts in number)";
+            if(user) err.msg_username = 'Username already exist';
             Diary.findOne({email : email})
                 .then((user) => {
                     const check = /([\w.-\_]+)[@][\w]{2,}([.]?[\w]{2,})?([.][\w]{2,})?/;
-                    if(!check.test(email)) err.push({msg : "not a valid email"});
-                    if(user) err.push({msg : 'Email already exist'});
-                    if(password !== retry_password) err.push({msg : 'password is wrong'});
-                    if(err.length > 0){
+                    if(!check.test(email)) err.msg_email = "not a valid email";
+                    if(user) err.msg_email = 'Email already exist';
+                    if(password.length < 8) err.msg_password = 'password should have atleast 8 characters or more';
+                    if(password !== retry_password) err.msg_retry = 'password is wrong';
+                    if(Object.values(err).every(err => err === '') === false){
                         res.send(err);
                     }else{
                         bcrypt.genSalt(10, (err, salt)=>{

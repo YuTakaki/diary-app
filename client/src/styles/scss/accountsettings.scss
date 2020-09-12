@@ -43,6 +43,13 @@
         width: 50%;
         color: white;
     }
+    .error{
+        margin-top: -20px;
+        margin-bottom: 10px;
+        color: red;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 0.9em;
+    }
     input:focus + label, input:not(:placeholder-shown) + label {
         top : -45px;
     }

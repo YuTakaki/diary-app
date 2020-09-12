@@ -26,11 +26,16 @@ body,html{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 60%;
+    height: 90%;
     background-color: white;
     padding: 40px;
     width: 90%;
     box-shadow: 5px 5px 5px rgb(72, 78, 90);
+    .error{
+        margin-top: -20px;
+        font-size: 0.8em;
+        color: red;
+    }
     h1{
         font-size: 2rem;
         font-family: 'Montserrat', sans-serif;

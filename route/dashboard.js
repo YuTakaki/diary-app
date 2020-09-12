@@ -29,39 +29,56 @@ route.post('/add-entry/:id', (req, res) => {
         .catch(err => console.log(err));
 });
 route.post('/update-entry/', (req, res) => {
+    // console.log('update');
     const {user_id, diary_id} = req.query;
     const {title, diary} = req.body;
-    // res.send(req.body);
+    // console.log(req.body)
     Diary.findOne({_id : user_id})
         .then(user => {
-            user.diaries = user.diaries.map(diary => {
-                if(diary_id === diary_id){
-                    diary.title = title;
-                    diary.diary = diary;
+            updated_diaries = user.diaries.map(current_diary => {
+
+                if(current_diary._id.toString() === diary_id){
+                    current_diary.title = title;
+                    current_diary.diary = diary;
                 }
-                return diary;
+                // console.log('map')
+                return current_diary;
             });
+            user.diaries = updated_diaries;
+            console.log(updated_diaries);
             user.save()
-                .then(user => res.redirect(`/dashboard/user/${user_id}`))
+                .then(user => {
+                    // console.log('save')
+                    res.redirect(`/dashboard/user/${user_id}`)})
+                .catch(err => console.log(err));
         })
         .catch(err => console.log(err));
 });
 
 route.put('/update-account/:id', (req, res) => {
     const {_id, username, email, password, retry_password} = req.body;
-    let err = [];
+    let err = {
+        msg_username : '',
+        msg_email : '',
+        msg_password : '',
+        msg_retry : ''
+    };
+    const checkUsername = /^[^\d][\w]{6,}/;
+    
+    if(!checkUsername.test(username)) err.msg_username = "not a valid username (should have atleast 6 characters and doesn't starts in number)";
+
+    const check = /([\w.-\_]+)[@][\w]{2,}([.]?[\w]{2,})?([.][\w]{2,})?/;
+                    if(!check.test(email)) err.msg_email = "not a valid email";
     Diary.findOne({username : username})
         .then((user) => {
-            const checkUsername = /^[^\d][\w]{6,}/;
-            if(!checkUsername.test(username)) err.push({msg : "not a valid username"});
-            if(user && user._id.toString() !== _id) err.push({msg : 'Username already exist'});
+            if(user && user._id.toString() !== _id) err.msg_username = 'Username already exist';
             Diary.findOne({email : email})
                 .then((user) => {
-                    const check = /([\w.-\_]+)[@][\w]{2,}([.]?[\w]{2,})?([.][\w]{2,})?/;
-                    if(!check.test(email)) err.push({msg : "not a valid email"});
-                    if(user && user._id.toString() !== _id) err.push({msg : 'Email already exist'});
-                    if(password !== retry_password) err.push({msg : 'password is wrong'});
-                    if(err.length > 0){
+                    
+                    if(user && user._id.toString() !== _id) err.msg_email ='Email already exist';
+                    if(password.length < 8) err.msg_password = 'password should have atleast 8 characters or more';
+                    if(password !== retry_password) err.msg_retry = 'password is wrong';
+                    if(Object.values(err).every(err => err === '') === false){
                         res.send(err);
                     }else{
                         bcrypt.genSalt(10, (err, salt)=>{
@@ -69,7 +86,7 @@ route.put('/update-account/:id', (req, res) => {
                             bcrypt.hash(password, salt, (err, hash) => {
                                 if(err) throw err;
                                 Diary.findOneAndUpdate({_id : user._id},{username, email, password : hash})
-                                    .then(() => Diary.findOne({username : username})
+                                    .then(() => Diary.findOne({_id})
                                                     .then(user => {
                                                         user.diaries = user.diaries.reverse()
                                                         res.send(user);

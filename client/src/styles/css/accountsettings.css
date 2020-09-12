@@ -44,6 +44,13 @@
   width: 50%;
   color: white;
 }
+.account-settings-form .error {
+  margin-top: -20px;
+  margin-bottom: 10px;
+  color: red;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9em;
+}
 .account-settings-form input:focus + label, .account-settings-form input:not(:placeholder-shown) + label {
   top: -45px;
 }

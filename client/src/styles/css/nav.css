@@ -63,6 +63,13 @@ nav {
   width: 50%;
   text-align: center;
 }
+.container .profileBtn {
+  display: flex;
+  justify-content: center;
+}
+.container span {
+  margin-left: auto;
+}
 .container .dropdown {
   display: none;
 }
@@ -83,6 +90,10 @@ nav {
   transform: translateX(50%);
   padding-top: 30px;
   width: 50%;
+}
+.container .down {
+  font-size: 0.9em;
+  margin-left: auto;
 }
 
 @media only screen and (min-width: 850px) {

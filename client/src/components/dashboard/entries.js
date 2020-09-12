@@ -4,8 +4,6 @@ import {Link} from 'react-router-dom';
 import {month} from '../functions/methods'
 
 const Entries = ({diary}) => {
-
-    console.log(diary);
     const date = new Date(diary.date);
     const day = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     const getDate = date.getDate() >= 10 ? date.getDate() : `0${date.getDate()}`;

@@ -8,7 +8,6 @@ import {toggleNavBar} from '../functions/methods';
 
 const Navbar = () => {
     const {auth} = useContext(Auth);
-    console.log(auth);
     const toggleNav = () => {
         toggleNavBar();
     }

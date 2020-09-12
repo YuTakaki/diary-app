@@ -64,6 +64,13 @@ nav{
         width: 50%;
         text-align: center;
     }
+    .profileBtn{
+        display: flex;
+        justify-content: center;
+    }
+    span{
+        margin-left: auto;
+    }
     .dropdown{
         display: none;
       }
@@ -85,6 +92,10 @@ nav{
         transform: translateX(50%);
         padding-top: 30px;
         width: 50%;
+    }
+    .down{
+        font-size: 0.9em;
+        margin-left: auto;
     }
 }
 @media only screen and (min-width : 850px){

@@ -17,7 +17,7 @@ const UpdateDiary = (props) => {
 
     const updateEntry = (e) => {
         e.preventDefault();
-        axios.post(`/dashboard/add-entry/${auth.user_id}`, {title: newDiary.title, diary: newDiary.content})
+        axios.post(`/dashboard/update-entry/?user_id=${auth.user_id}&diary_id=${props.match.params.id}`, {title: newDiary.title, diary: newDiary.content})
             .then(res => {
                 dispatchUser({type: 'GETDATA', user: res.data});
                 props.history.push('/');
