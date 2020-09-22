@@ -21,7 +21,7 @@ const SignedInLinks = (props) => {
     return ( 
         <ul className='nav'>
             <Link to='/new-entry' onClick={toggleNavBar}><li>New Entry</li></Link>
-            <li className='profileBtn'><span>{user.username[0].toUpperCase()}</span>
+            <li className='profileBtn'><span>{user.username}</span>
                 <div className='dropdown'>
                     <ul>
                         <li onClick={logOut}>Log out</li>
