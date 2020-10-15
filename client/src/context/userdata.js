@@ -5,7 +5,7 @@ import axios from 'axios';
 export const User_data = createContext();
 
 const UserDataProvider = (props) => {
-    const [user, dispatchUser] = useReducer(userDataReducer, {username : '',diaries: []});
+    const [user, dispatchUser] = useReducer(userDataReducer, {username : 'a',diaries: []});
     useEffect(() => {
         const localStorageAuth = localStorage.getItem('auth');
         if(localStorageAuth){
