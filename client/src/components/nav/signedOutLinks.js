@@ -8,7 +8,7 @@ import {toggleNavBar} from '../functions/methods';
 const SignedOutLinks = (props) => {
     return ( 
         <ul className='nav'>
-            <Link to='/home-page' onClick={toggleNavBar}><li>Home11</li></Link>
+            <Link to='/home-page' onClick={toggleNavBar}><li>Home</li></Link>
             <li className='signinBtn' onClick={() => {
                 toggleNavBar();
                 setTimeout(()=> {
