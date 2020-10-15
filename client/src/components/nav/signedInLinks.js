@@ -21,7 +21,7 @@ const SignedInLinks = (props) => {
     return ( 
         <ul className='nav'>
             <Link to='/new-entry' onClick={toggleNavBar}><li>New Entry</li></Link>
-            <li className='profileBtn'><span>{user.username}</span>
+            <li className='profileBtn'><span>{user !== undefined ? user.username[0] : null}</span>
                 <div className='dropdown'>
                     <ul>
                         <li onClick={logOut}>Log out</li>

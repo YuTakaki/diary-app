@@ -15,7 +15,8 @@ route.get('/user/:id', (req, res) => {
         .then(user => {
             user.diaries = user.diaries.reverse()
             res.send(user);
-        });
+        })
+        .catch(err => console.log(err));
 });
 route.post('/add-entry/:id', (req, res) => {
     const {title, diary} = req.body;
@@ -153,6 +154,7 @@ route.delete('/post/delete/', (req, res) => {
                     
                 .catch(err => console.log(err));
         })
+        .catch(err => console.log(err));
 
 })
 module.exports = route;

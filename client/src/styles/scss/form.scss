@@ -27,9 +27,11 @@ body,html{
     justify-content: space-evenly;
     align-items: center;
     height: 90%;
+    max-height: 562px;
     background-color: white;
     padding: 40px;
     width: 90%;
+    max-width: 337px;
     box-shadow: 5px 5px 5px rgb(72, 78, 90);
     .error{
         margin-top: -20px;

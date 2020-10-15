@@ -5,7 +5,7 @@ a {
 .entry {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 30px;
-  padding-bottom: 0;
+  padding-bottom: 20px;
   border-radius: 13px;
   margin-bottom: 20px;
 }
@@ -24,7 +24,7 @@ a {
 .entry h1, .entry h2 {
   font-family: "Montserrat", sans-serif;
   color: #408be0;
-  max-width: 30%;
+  max-width: 100%;
   -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
           mask-image: linear-gradient(to right, black 90%, transparent 100%);
 }
@@ -37,9 +37,13 @@ a {
 }
 .entry .time {
   margin-top: 10px;
+  display: flex;
 }
-.entry .year {
-  margin-left: auto;
+.entry .time p {
+  margin-right: 10px;
+}
+.entry .time .year {
+  margin-right: 30px;
 }
 .entry .content {
   margin-top: 5px;

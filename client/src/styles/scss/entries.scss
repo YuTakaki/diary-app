@@ -4,7 +4,7 @@ a{
 .entry{
     background-color: rgba(255, 255, 255, 0.8);
     padding: 30px;
-    padding-bottom: 0;
+    padding-bottom: 20px;
     border-radius: 13px;
     margin-bottom: 20px;
     .diary-content{
@@ -22,7 +22,7 @@ a{
     h1, h2{
         font-family: 'Montserrat', sans-serif;
         color: rgb(64, 139, 224);
-        max-width: 30%;
+        max-width: 100%;
         mask-image: linear-gradient(to right, black 90%, transparent 100%);
     }
     .titleContent{
@@ -33,10 +33,17 @@ a{
     }
     .time{
         margin-top: 10px;
+        display: flex;
+        p{
+            margin-right: 10px;
+        }
+        .year{
+            margin-right: 30px;
+            
+            
+        }
     }
-    .year{
-        margin-left: auto;
-    }
+    
     .content{
         margin-top: 5px;
         max-height: 100px;

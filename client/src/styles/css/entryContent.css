@@ -7,10 +7,11 @@
 }
 .entryContentContainer .entryContent {
   width: 50%;
+  min-width: 300px;
 }
 .entryContentContainer .entryContentHeader {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: space-between;
 }
 .entryContentContainer h1 {
@@ -58,6 +59,7 @@
 @media only screen and (min-width: 720px) {
   .entryContentHeader {
     flex-direction: row !important;
+    align-items: center;
   }
 
   button {

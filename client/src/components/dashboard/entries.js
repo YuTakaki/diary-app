@@ -16,10 +16,11 @@ const Entries = ({diary}) => {
                     
                     <h1>{diary.title}</h1>
                     
-                    <p>{day[date.getDay()]}</p>
-                    <p className='year'>{date.getFullYear()}</p>
+                    
                 </div>
                 <div className='time'>
+                    <p>{day[date.getDay()]}</p>
+                    <p className='year'>{date.getFullYear()}</p>
                     <p>{hours}:{minutes}</p>
                 </div>
                 <div className='content'>
